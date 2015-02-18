@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @restaurant.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @restaurant.address %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @restaurant.phone_number %>
+</p>
+
+<p>
+  <strong>Reviews:</strong>
+  <ul>
+  <%= @restaurant.reviews.map do |l| %>
+  <li><%= "#{r.content}, rating: #{r.rating}"%></li>
+  </ul>
+</p>
+
+<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+<%= link_to 'Back', restaurant_path(@restaurant) %>
+<%= link_to 'Add Review', new_restaurant_review_path(@restaurant)%>
